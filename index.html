@@ -34,6 +34,7 @@
     
     .container {
       max-width: 1200px;
+      width: 95%;
       margin: 30px auto;
       background-color: var(--light);
       box-shadow: var(--shadow);
@@ -60,7 +61,7 @@
     }
     
     .header-title {
-      font-size: 48px;
+      font-size: clamp(32px, 5vw, 48px);
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -78,6 +79,7 @@
       padding: 30px;
       background-color: var(--light);
       flex-wrap: wrap;
+      gap: 20px;
     }
     
     .college-logo {
@@ -91,7 +93,7 @@
       padding: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
-      margin: 10px auto;
+      margin: 0 auto;
     }
     
     .college-logo:hover {
@@ -108,12 +110,12 @@
     .college-text {
       flex: 1;
       text-align: center;
-      margin: 10px;
+      min-width: 280px;
     }
     
     .college-name {
       color: var(--primary-color);
-      font-size: 28px;
+      font-size: clamp(22px, 4vw, 28px);
       font-weight: 800;
       text-transform: uppercase;
       margin-bottom: 8px;
@@ -121,7 +123,7 @@
     
     .college-subtitle {
       color: var(--dark);
-      font-size: 16px;
+      font-size: clamp(14px, 2vw, 16px);
       opacity: 0.8;
       margin-bottom: 5px;
     }
@@ -132,7 +134,8 @@
       border-radius: var(--border-radius);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       text-align: center;
-      margin: 10px auto;
+      margin: 0 auto;
+      min-width: 250px;
       max-width: 300px;
     }
     
@@ -199,13 +202,13 @@
     }
     
     .event-title {
-      font-size: 72px;
+      font-size: clamp(40px, 10vw, 72px);
       font-weight: 900;
       margin: 0;
       position: relative;
       z-index: 1;
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: clamp(2px, 0.5vw, 4px);
       color: transparent;
       background: linear-gradient(45deg, var(--accent-color), #fff, var(--accent-color));
       -webkit-background-clip: text;
@@ -222,7 +225,7 @@
     
     .department {
       text-align: center;
-      font-size: 32px;
+      font-size: clamp(24px, 5vw, 32px);
       font-weight: 800;
       padding: 30px;
       background-color: var(--medium);
@@ -242,13 +245,14 @@
     }
     
     .benefits-section {
-      padding: 50px 30px;
+      padding: 40px 15px;
       background-color: var(--light);
+      overflow-x: auto;
     }
     
     .section-title {
       text-align: center;
-      font-size: 28px;
+      font-size: clamp(22px, 4vw, 28px);
       font-weight: 700;
       margin-bottom: 30px;
       color: var(--dark);
@@ -256,6 +260,7 @@
     
     .benefits-table {
       width: 100%;
+      min-width: 650px;
       margin: 0 auto;
       border-collapse: separate;
       border-spacing: 0;
@@ -266,7 +271,7 @@
     
     .benefits-table th,
     .benefits-table td {
-      padding: 20px;
+      padding: 15px;
       text-align: center;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
@@ -275,7 +280,7 @@
       background-color: var(--primary-color);
       color: var(--light);
       font-weight: 600;
-      font-size: 18px;
+      font-size: clamp(16px, 2vw, 18px);
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -285,7 +290,7 @@
       color: var(--dark) !important;
       font-weight: 700 !important;
       text-align: left;
-      font-size: 16px !important;
+      font-size: clamp(14px, 2vw, 16px) !important;
     }
     
     .platinum-col {
@@ -303,7 +308,7 @@
     .package-title {
       display: inline-block;
       font-weight: 700;
-      font-size: 20px;
+      font-size: clamp(16px, 2vw, 20px);
       margin-bottom: 8px;
       color: var(--light);
       padding: 5px 15px;
@@ -327,7 +332,7 @@
     
     .package-price {
       font-weight: 600;
-      font-size: 16px;
+      font-size: clamp(14px, 2vw, 16px);
       color: rgba(255, 255, 255, 0.9);
       margin-top: 8px;
     }
@@ -366,41 +371,82 @@
       border-bottom: none;
     }
     
-    footer {
-      display: none; /* Footer removed for a cleaner look */
+    /* Improved media queries for better responsiveness */
+    @media (max-width: 992px) {
+      .container {
+        width: 98%;
+      }
+      
+      .college-info {
+        justify-content: center;
+      }
+      
+      .benefits-table th,
+      .benefits-table td {
+        padding: 12px 10px;
+      }
     }
     
     @media (max-width: 768px) {
       .college-info {
         flex-direction: column;
+      }
+      
+      .college-logo, .college-text, .contact-info {
+        width: 100%;
+        max-width: 100%;
+      }
+      
+      .event-name {
+        padding: 40px 15px;
+      }
+      
+      .department {
+        padding: 20px 15px;
+      }
+      
+      .benefits-section {
+        padding: 30px 10px;
+      }
+      
+      /* Add horizontal scroll hint for table on mobile */
+      .benefits-section::before {
+        content: 'Scroll horizontally to view full table →';
+        display: block;
         text-align: center;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: var(--primary-color);
+        font-style: italic;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        margin: 15px auto;
+        border-radius: 10px;
+      }
+      
+      header {
+        padding: 30px 15px;
+      }
+      
+      .header-title {
+        letter-spacing: 1px;
+      }
+      
+      .college-info {
+        padding: 20px 15px;
       }
       
       .college-logo {
-        margin: 0 auto 20px;
+        width: 120px;
+        height: 120px;
       }
       
-      .contact-info {
-        margin-top: 20px;
-        text-align: center;
-        width: 100%;
-      }
-      
-      .contact-detail {
-        justify-content: center;
-      }
-      
-      .event-title {
-        font-size: 48px;
-      }
-      
-      .benefits-table th,
-      .benefits-table td {
-        padding: 15px 10px;
-      }
-      
-      .package-title {
-        font-size: 16px;
+      .check-icon, .cross-icon {
+        width: 24px;
+        height: 24px;
       }
     }
   </style>
@@ -494,10 +540,6 @@
         </tbody>
       </table>
     </div>
-    
-    <footer>
-      <!-- Minimalist look: Footer intentionally left blank -->
-    </footer>
   </div>
 </body>
 </html>
