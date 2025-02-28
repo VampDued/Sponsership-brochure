@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsorship Packages</title>
+  <style>
+    :root {
+      --primary-color: #2B3990;
+      --secondary-color: #0072CE;
+      --accent-color: #FDB913;
+      --platinum: #E5E4E2;
+      --gold: #FFD700;
+      --silver: #C0C0C0;
+      --dark: #242A38;
+      --light: #FFFFFF;
+      --medium: #F5F7FA;
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      --border-radius: 16px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #F0F4F8, #FFFFFF);
+      color: #334155;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      background-color: var(--light);
+      box-shadow: var(--shadow);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--light);
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background: var(--accent-color);
+    }
+    
+    .header-title {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(to right, #fff, #e0e0e0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .college-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px;
+      background-color: var(--light);
+      flex-wrap: wrap;
+    }
+    
+    .college-logo {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--medium);
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      margin: 10px auto;
+    }
+    
+    .college-logo:hover {
+      transform: scale(1.05);
+    }
+    
+    .college-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    
+    .college-text {
+      flex: 1;
+      text-align: center;
+      margin: 10px;
+    }
+    
+    .college-name {
+      color: var(--primary-color);
+      font-size: 28px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    
+    .college-subtitle {
+      color: var(--dark);
+      font-size: 16px;
+      opacity: 0.8;
+      margin-bottom: 5px;
+    }
+    
+    .contact-info {
+      background: var(--medium);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      margin: 10px auto;
+      max-width: 300px;
+    }
+    
+    .contact-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
+    
+    .contact-detail {
+      margin: 8px 0;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .contact-detail:before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      background-color: var(--primary-color);
+      mask-size: contain;
+      -webkit-mask-size: contain;
+      mask-position: center;
+      -webkit-mask-position: center;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+    }
+    
+    .contact-phone:before {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E");
+    }
+    
+    .contact-person:before {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+    }
+    
+    .event-name {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, var(--dark), #1a1f2c);
+      color: var(--light);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .event-name::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(43, 57, 144, 0.8) 0%, rgba(43, 57, 144, 0) 70%);
+      z-index: 0;
+    }
+    
+    .event-title {
+      font-size: 72px;
+      font-weight: 900;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: transparent;
+      background: linear-gradient(45deg, var(--accent-color), #fff, var(--accent-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      animation: shimmer 3s infinite linear;
+      background-size: 200% 100%;
+    }
+    
+    @keyframes shimmer {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 200% 50%;}
+    }
+    
+    .department {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+      padding: 30px;
+      background-color: var(--medium);
+      color: var(--primary-color);
+      letter-spacing: 2px;
+      position: relative;
+    }
+    
+    .department::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: var(--accent-color);
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+    
+    .benefits-section {
+      padding: 50px 30px;
+      background-color: var(--light);
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--dark);
+    }
+    
+    .benefits-table {
+      width: 100%;
+      margin: 0 auto;
+      border-collapse: separate;
+      border-spacing: 0;
+      box-shadow: var(--shadow);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+    
+    .benefits-table th,
+    .benefits-table td {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .benefits-table th {
+      background-color: var(--primary-color);
+      color: var(--light);
+      font-weight: 600;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .benefits-header {
+      background-color: var(--medium) !important;
+      color: var(--dark) !important;
+      font-weight: 700 !important;
+      text-align: left;
+      font-size: 16px !important;
+    }
+    
+    .platinum-col {
+      background-color: rgba(229, 228, 226, 0.15);
+    }
+    
+    .gold-col {
+      background-color: rgba(255, 215, 0, 0.1);
+    }
+    
+    .silver-col {
+      background-color: rgba(192, 192, 192, 0.15);
+    }
+    
+    .package-title {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--light);
+      padding: 5px 15px;
+      border-radius: 20px;
+    }
+    
+    .platinum .package-title {
+      background-color: var(--platinum);
+      color: var(--dark);
+    }
+    
+    .gold .package-title {
+      background-color: var(--gold);
+      color: var(--dark);
+    }
+    
+    .silver .package-title {
+      background-color: var(--silver);
+      color: var(--dark);
+    }
+    
+    .package-price {
+      font-weight: 600;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 8px;
+    }
+    
+    .check-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 50%;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0, 150, 20, 0.2);
+    }
+    
+    .cross-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background-color: #F44336;
+      color: white;
+      border-radius: 50%;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(200, 0, 0, 0.2);
+    }
+    
+    .benefits-table tr:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .benefits-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    footer {
+      display: none; /* Footer removed for a cleaner look */
+    }
+    
+    @media (max-width: 768px) {
+      .college-info {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .college-logo {
+        margin: 0 auto 20px;
+      }
+      
+      .contact-info {
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .contact-detail {
+        justify-content: center;
+      }
+      
+      .event-title {
+        font-size: 48px;
+      }
+      
+      .benefits-table th,
+      .benefits-table td {
+        padding: 15px 10px;
+      }
+      
+      .package-title {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="header-title">Sponsorship Packages</h1>
+    </header>
+    
+    <div class="college-info">
+      <div class="college-logo">
+        <img src="asset/college_logo.png" alt="College Logo" width="200">
+      </div>
+      <div class="college-text">
+        <h2 class="college-name">Rajalakshmi Engineering College</h2>
+        <p class="college-subtitle">An Autonomous Institution</p>
+        <p class="college-subtitle">Affiliated to Anna University, Chennai</p>
+      </div>
+      <div class="contact-info">
+        <p class="contact-title">Contact</p>
+        <p class="contact-detail contact-person">KAVIRAJAPANDIAN</p>
+        <p class="contact-detail contact-phone">63810-72202</p>
+      </div>
+    </div>
+    
+    <div class="event-name">
+      <h1 class="event-title">ZIGGURAT'25</h1>
+    </div>
+    
+    <div class="department">
+      CIVIL DEPARTMENT
+    </div>
+    
+    <div class="benefits-section">
+      <table class="benefits-table">
+        <thead>
+          <tr>
+            <th class="benefits-header">Benefits</th>
+            <th class="platinum">
+              <div class="package-title">Platinum</div>
+              <div class="package-price">Rs.10,000+</div>
+            </th>
+            <th class="gold">
+              <div class="package-title">Gold</div>
+              <div class="package-price">Rs.5,000</div>
+            </th>
+            <th class="silver">
+              <div class="package-title">Silver</div>
+              <div class="package-price">&lt; Rs.5,000</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="benefits-header">Special acknowledgement of support at events</td>
+            <td class="platinum-col"><span class="check-icon">✓</span></td>
+            <td class="gold-col"><span class="check-icon">✓</span></td>
+            <td class="silver-col"><span class="check-icon">✓</span></td>
+          </tr>
+          <tr>
+            <td class="benefits-header">Logo on Maps & sign boards</td>
+            <td class="platinum-col"><span class="check-icon">✓</span></td>
+            <td class="gold-col"><span class="cross-icon">×</span></td>
+            <td class="silver-col"><span class="cross-icon">×</span></td>
+          </tr>
+          <tr>
+            <td class="benefits-header">Logos printed in all the certificates</td>
+            <td class="platinum-col"><span class="check-icon">✓</span></td>
+            <td class="gold-col"><span class="cross-icon">×</span></td>
+            <td class="silver-col"><span class="cross-icon">×</span></td>
+          </tr>
+          <tr>
+            <td class="benefits-header">Social media post announcement</td>
+            <td class="platinum-col"><span class="check-icon">✓</span></td>
+            <td class="gold-col"><span class="check-icon">✓</span></td>
+            <td class="silver-col"><span class="cross-icon">×</span></td>
+          </tr>
+          <tr>
+            <td class="benefits-header">Distribution of marketing props to participants</td>
+            <td class="platinum-col"><span class="check-icon">✓</span></td>
+            <td class="gold-col"><span class="cross-icon">×</span></td>
+            <td class="silver-col"><span class="cross-icon">×</span></td>
+          </tr>
+          <tr>
+            <td class="benefits-header">Drop banners</td>
+            <td class="platinum-col"><span class="check-icon">✓</span></td>
+            <td class="gold-col"><span class="check-icon">✓</span></td>
+            <td class="silver-col"><span class="cross-icon">×</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <footer>
+      <!-- Minimalist look: Footer intentionally left blank -->
+    </footer>
+  </div>
+</body>
+</html>
